@@ -1,0 +1,21 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.bannerSection{
+    background-color: $darkBg;
+    .bannerContent{
+        padding: 80px 0 70px;
+        text-align: center;
+        @media(max-width:$breakpoint-tablet-sm){
+            padding: 50px 0 60px;
+        }
+        p{
+            max-width: 570px;
+            color: rgba($color: $white, $alpha: 0.64);
+            margin: 24px auto 0;
+            @media(max-width:$breakpoint-mobile){
+                margin: 15px auto 0;
+            }
+        }
+    }
+}

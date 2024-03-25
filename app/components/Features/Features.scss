@@ -1,0 +1,129 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.featuresSection{
+    .featuresWrapper{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        @media(max-width:$breakpoint-mobile){
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+        }
+        .contentBox{
+            width: 45%;
+            @media(max-width:$breakpoint-mobile){
+                width: 100%;
+            }
+            .TitleContent{
+                max-width: 370px;
+                @media(max-width:$breakpoint-tablet){
+                    max-width: 340px;
+                }
+                @media(max-width:$breakpoint-tablet-sm){
+                    // max-width: 280px;
+                    max-width: calc(100% - 50px);
+                }
+                @media(max-width:$breakpoint-mobile){
+                    max-width: 100%;
+                }
+                h5{
+                    margin-bottom: 12px;
+                }
+                .feturesLink{
+                    margin-top: 30px;
+                    @media(max-width:$breakpoint-mobile){
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+        .featuresContent{
+            display: flex;
+            width: 55%;
+            align-items: flex-end;
+            @media(max-width:$breakpoint-mobile){
+                width: 100%;
+            }
+            @media(max-width:$breakpoint-mobile-sm){
+                flex-direction: column;
+            }
+            .CardInnerBox{
+                border: 1px solid $bordercolor;
+                padding: 48px;
+                border-radius: 6px;
+                @media(max-width:$breakpoint-laptop){
+                    padding: 30px 25px;
+                }
+                @media(max-width:$breakpoint-tablet-sm){
+                    padding: 20px 15px;
+                }
+                @media(max-width:$breakpoint-mobile-sm){
+                    width: 100%;
+                }
+                .iconBox{
+                    width: 80px;
+                    height: 80px;
+                    background-color: $secondary;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 40px;
+                    @media(max-width:$breakpoint-laptop){
+                        margin-bottom: 25px;
+                    }
+                    @media(max-width:$breakpoint-tablet){
+                        width: 60px;
+                        height: 60px;
+                    }
+                    @media(max-width:$breakpoint-tablet-sm){
+                        width: 50px;
+                        height: 50px;
+                    }
+                    i{
+                        font-size: 28px;
+                        color: $white;
+                        @media(max-width:$breakpoint-tablet){
+                            font-size: 20px;
+                        }
+                        @media(max-width:$breakpoint-tablet-sm){
+                            font-size: 17px;
+                        }
+                    }
+                }
+                h4{
+                    margin-bottom: 20px;
+                    @media(max-width:$breakpoint-tablet-sm){
+                        margin-bottom: 10px;
+                    }
+                }
+                &:first-child{
+                    border-bottom-right-radius: 0;
+                    background-color: $white;
+                    @media(max-width:$breakpoint-mobile-sm){
+                        border-bottom-left-radius: 0;
+                    }
+                }
+                &:last-child{
+                    border-left: none;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    @media(max-width:$breakpoint-mobile-sm){
+                        border-top-right-radius: 0;
+                        border-bottom-left-radius: 6px;
+                        border-left: 1px solid $bordercolor;
+                        border-top: none;
+                    }
+                    h4{
+                        margin-top: 50px;
+                        @media(max-width:$breakpoint-tablet-sm){
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

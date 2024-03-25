@@ -1,0 +1,47 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.aboutUsSection{
+    .AboutUsWrapper{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        @media(max-width:$breakpoint-mobile) {
+            flex-direction: column;
+            gap: 25px 10px;
+        }
+        .AboutLeftContent , .AboutRighttContent{
+            width: 50%;
+            @media(max-width:$breakpoint-mobile) {
+                width: 100%;
+            }
+        }
+        .AboutLeftContent{
+            h3{
+                max-width: 470px;
+                @media(max-width:$breakpoint-tablet) {
+                    max-width: 400px;
+                }
+                @media(max-width:$breakpoint-tablet-sm) {
+                    max-width: 320px;
+                }
+                @media(max-width:$breakpoint-mobile) {
+                    max-width: 100%;
+                }
+            }
+        }
+        .AboutRighttContent{
+            margin-top: 50px;
+            @media(max-width:$breakpoint-tablet) {
+                margin-top: 40px;
+            }
+            @media(max-width:$breakpoint-tablet-sm) {
+                margin-top: 45px;
+            }
+            @media(max-width:$breakpoint-mobile) {
+                margin-top: 0;
+            }
+        }
+    }
+}

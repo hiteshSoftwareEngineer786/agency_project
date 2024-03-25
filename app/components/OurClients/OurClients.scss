@@ -1,0 +1,27 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.clinetsSection{
+    .ClientsWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media(max-width:$breakpoint-mobile){
+           justify-content: center;
+           gap: 20px;
+        }
+        li{
+            min-height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media(max-width:$breakpoint-mobile){
+                width: calc(33.33% - 20px);
+            }
+            @media(max-width:$breakpoint-mobile-sm){
+                width: calc(50% - 20px);
+            }
+        }
+    }
+}

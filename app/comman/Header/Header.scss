@@ -1,0 +1,217 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+header{
+    background-color: $darkBg;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    .headerWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        .logo{
+            img{
+                max-width: 152px;
+                @media(max-width:$breakpoint-tablet-sm){
+                    max-width: 135px;
+                }
+                @media(max-width:$breakpoint-mobile-xs){
+                    max-width: 120px;
+                }
+            }
+        }
+        .headerNavMenu{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            @media(max-width:$breakpoint-laptop){
+                gap: 20px;
+            }
+            @media(max-width:$breakpoint-tablet-sm){
+                gap: 10px;
+            }
+            @media(max-width:$breakpoint-mobile-xs){
+                gap: 5px;             
+            }
+            .navMenuWrapper{
+                
+                @media(max-width:$breakpoint-mobile){
+                    position: absolute;
+                    width: 100%;
+                    left: -100%;
+                    top: 0;
+                    padding-top: 80px;
+                    background-color: $black;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: 0.4s all ease-in-out;
+                    height: 100vh;
+                    overflow: auto;
+                    z-index: -1;
+                    @media(max-width:$breakpoint-mobile-xs){
+                        padding-top: 74px;            
+                    }
+                }
+                ul{
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                    @media(max-width:$breakpoint-laptop){
+                        gap: 20px;
+                    }
+                    @media(max-width:$breakpoint-tablet-sm){
+                        gap: 10px;
+                    }
+                    @media(max-width:$breakpoint-mobile){
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0;
+                    }
+                    .NavMenu{
+                        padding: 10px 20px;
+                        @media(max-width:$breakpoint-tablet-sm){
+                            padding: 8px 14px;
+                        }
+                        @media(max-width:$breakpoint-mobile){
+                            display: block;
+                            width: 100%;
+                            padding: 0px;
+                            border-top: 1px solid #515151;
+                            &:last-child{
+                                border-bottom: 1px solid #515151;
+                            }
+                        }
+                        .Navlink{
+                            color: $white;
+                            font-size: 16px;
+                            line-height: 1.1;
+                            font-weight: 400;
+                            transition: 0.3s ease-in-out;
+                            @media(max-width:$breakpoint-mobile){
+                                display: block;
+                                padding: 12px 14px;
+                            }
+                            @media(max-width:$breakpoint-mobile-xs){
+                                font-size: 14px;             
+                            }
+                            &:hover{
+                                color: $secondary;
+                            }
+                        } 
+                        &.active{
+                            .Navlink{
+                                color: $secondary;  
+                            }
+                        } 
+                    }
+                    
+                }
+            }
+            
+            .toggleMenuwrap {
+                display: none;
+                @media (max-width: $breakpoint-mobile) {
+                    display: inline-flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    width: 32px;
+                    height: 32px;
+                    cursor: pointer;
+                    transition: all .5s ease;
+                    border: 0;
+                    padding: 0;
+                    background-color: transparent;
+                    margin-left: 10px;
+
+                    &>span {
+                        height: 3px;
+                        border-radius: 2px;
+                        background: $white;
+                        transition: 0.4s all ease-in-out;
+                        width: 100%;
+
+                        @media (max-width: $breakpoint-mobile-sm) {
+                            height: 2px;
+                        }
+                    }
+                }
+                @media (max-width: $breakpoint-mobile) {
+                    width: 30px;
+                    height: 30px;
+                }
+                @media (max-width: $breakpoint-mobile-sm) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+             
+            .contactBtn{
+                border: 1px solid $white;
+                background-color: transparent;
+                color: $white;
+                margin-left: 20px;
+                @media(max-width:$breakpoint-tablet-sm){
+                    margin-left: 14px;
+                }
+                @media(max-width:$breakpoint-mobile){
+                    margin-left: 0;
+                    padding: 10px 14px;
+                    font-size: 13px;
+                }
+                
+                @media(max-width:$breakpoint-mobile-xs){
+                    padding: 8px 12px;
+                    font-size: 12px;              
+                }
+                &:hover{
+                    background-color: $secondary;
+                    border-color: $secondary;
+                }
+            }
+        }
+    }
+}
+.menuOpen{
+     header{
+        .headerWrapper{
+            .navMenuWrapper {
+                visibility: visible;
+                opacity: 1;
+                left: 0;
+            }
+        }
+     }  
+     .toggleMenuwrap {
+        &>span {
+            &:first-child {
+                transform: translateY(9px) rotate(45deg);
+
+                @media (max-width: $breakpoint-mobile) {
+                    transform: translateY(10px) rotate(45deg);
+                }
+
+                @media (max-width: $breakpoint-mobile-sm) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:last-child {
+                transform: translateY(-12px) rotate(-45deg);
+
+                @media (max-width: $breakpoint-mobile) {
+                    transform: translateY(-10px) rotate(-45deg);
+                }
+
+                @media (max-width: $breakpoint-mobile-sm) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+            }
+        }
+    }         
+}

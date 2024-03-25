@@ -1,0 +1,38 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.InputWrapper{
+    position: relative;
+    border: 1px solid $themebg;
+    input , textarea{
+        padding: 12px 16px;
+        font-size: 16px;
+        line-height: 1.2;
+        color: black;
+        background-color: $white;
+        border: none;
+        outline: none;
+        width: 100%;
+        @media(max-width:$breakpoint-mobile-sm){
+            font-size: 14px;
+        }
+        &::placeholder{
+            color: #391400A3;
+        }
+    }
+    textarea{
+        display: block;
+        resize: none;
+        font-family: inherit;
+        height: 100px;
+    }
+    .errorMsg{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 14px;
+        line-height: 1.1;
+        color: red;
+        margin-top: 4px;
+    }
+}

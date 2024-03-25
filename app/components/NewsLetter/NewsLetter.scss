@@ -1,0 +1,71 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.newsLetterSection{
+    .newsLetterWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        border-bottom: 1px solid $bordercolor;
+        @media(max-width:$breakpoint-mobile-xs){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        form{
+            
+            @media(max-width:$breakpoint-mobile-sm){
+                width: 100%;
+            }
+        }
+        .newsLetterForm{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            @media(max-width:$breakpoint-tablet-sm){
+                gap: 20px;
+            }
+            @media(max-width:$breakpoint-mobile-xs){
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .InputWrapper{
+                width: 370px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                height: 48px;
+                @media(max-width:$breakpoint-laptop){
+                    height: 44px;
+                }
+                @media(max-width:$breakpoint-tablet-sm){
+                    width: 300px;
+                }
+                @media(max-width:$breakpoint-mobile){
+                    width: 240px;
+                    height: 40px;
+                }
+                @media(max-width:$breakpoint-mobile-sm){
+                    width: calc(100% - 112px);
+                }
+                @media(max-width:$breakpoint-mobile-xs){
+                    width: 100%;
+                }
+                input{
+                    height: 48px;
+                    @media(max-width:$breakpoint-laptop){
+                        height: 44px;
+                    }
+                    @media(max-width:$breakpoint-mobile){
+                        height: 40px;
+                        font-size: 14px;
+                        padding: 10px 16px;
+                    }
+                }
+            }
+        }
+    }
+}

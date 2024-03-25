@@ -1,0 +1,42 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.contactUsSection{
+    background-image: url('../../../public/images/map-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .contactform{
+        width: 470px;
+        padding: 50px;
+        background-color: $white;
+        @media(max-width:$breakpoint-tablet){
+            padding: 40px;
+        }
+        @media(max-width:$breakpoint-tablet-sm){
+            padding: 25px 30px;
+            width: 410px;
+        }
+        @media(max-width:$breakpoint-mobile){
+            background: rgba($color: $black, $alpha: 0.2);
+            width: 100%;
+        }
+        @media(max-width:$breakpoint-mobile-xs){
+            padding: 20px; 
+        }
+        h4{
+            margin-bottom: 25px;
+        }
+        .InputWrapper{
+            margin-bottom: 30px;
+            border-radius: 5px;
+            input , textarea{
+                border-radius: 5px;
+                
+            }
+        }
+        .BtnBox{
+            text-align: end;
+        }
+    }
+}
