@@ -6,10 +6,8 @@ const ServicesAccordion = () => {
     const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = (i) => {
-    if(toggleAccordion === i) {
-        return setIsOpen (true)
-    }
-    setIsOpen(i)}
+    setIsOpen((pre)=>pre===i?null:i)
+   }
     ;
     const servicesData = [
         { 

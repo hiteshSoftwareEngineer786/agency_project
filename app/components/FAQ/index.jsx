@@ -7,10 +7,8 @@ const FAQ = ({extraClass=""}) => {
     const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = (i) => {
-    if(toggleAccordion === i) {
-        return setIsOpen (true)
-    }
-    setIsOpen(i)}
+    setIsOpen((pre)=>pre===i?null:i)
+}
     ;
     const data = [
         { id: 1, title: 'A digital agency is a business', content: 'Digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you hit your marketing goals and grow your business.' },
