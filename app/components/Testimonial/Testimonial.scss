@@ -1,0 +1,83 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.testimonailSection{
+    overflow: hidden;
+    .title{
+        text-align: center;
+        margin-bottom: 60px;
+        @media(max-width:$breakpoint-mobile) {
+            padding-bottom: 30px;
+        }
+    }
+    .testimonialWrapper{
+        .testimonialSlide{
+            background-color: $white;
+            padding: 50px;
+            @media(max-width:$breakpoint-tablet) {
+                padding: 40px;
+            }
+            @media(max-width:$breakpoint-tablet-sm) {
+                padding: 30px;
+            }
+            @media(max-width:$breakpoint-mobile) {
+                padding: 20px;
+            }
+            .starsWrapper{
+                margin-bottom: 35px;
+                @media(max-width:$breakpoint-tablet-sm) {
+                    margin-bottom: 25px;
+                }
+            }
+            p{
+                color: rgba($color: $primary, $alpha: 0.64);
+                margin-bottom: 35px;
+                @media(max-width:$breakpoint-tablet-sm) {
+                    margin-bottom: 25px;
+                }
+            }
+            .customWrap{
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                .imageBox{
+                    width: 80px;
+                    height: 80px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    @media(max-width:$breakpoint-tablet-sm) {
+                        width: 70px;
+                        height: 70px;
+                    }
+                    img{
+                        object-fit: cover;
+                    }
+                }
+                .ClientDetails{
+                    h4{
+                        color: $primary;
+                        margin-bottom: 3px;
+                    }
+                    span{
+                        font-size: 16px;
+                        line-height: 2;
+                        color: $primary;
+                        @media(max-width:$breakpoint-tablet-sm) {
+                            font-size: 14x;
+                            line-height: 1.7;
+                        }
+                    }
+                }
+               
+            }
+        }
+        .swiper{
+            .swiper-slide{
+                opacity: 0.24;
+                &.swiper-slide-active{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

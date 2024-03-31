@@ -1,0 +1,171 @@
+
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.BlogsWrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    @media(max-width:$breakpoint-tablet){
+        gap: 20px;
+    }
+    @media(max-width:$breakpoint-mobile){
+        gap: 30px 20px;
+    }
+    .BlogCard{
+        transition: 0.3s ease-in-out;
+        position: relative;
+        .BlogImageBox{
+            overflow: hidden;
+            border-radius: 10px;
+          img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: 0.3s ease-in-out;
+          }  
+        }
+        .blogContent{
+            margin-top: 25px;
+            @media(max-width:$breakpoint-mobile){
+                margin-top: 20px;
+            }
+            .badgeTitle{
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 1.7;
+                color: $primary;
+                @media(max-width:$breakpoint-tablet){
+                    font-size: 18px;
+                }
+                @media(max-width:$breakpoint-tablet-sm){
+                    font-size: 16px;
+                }
+            }
+            h3{
+                font-weight: 800;
+                color: $primary;
+                margin: 20px 0 10px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                @media(max-width:$breakpoint-laptop){
+                    margin: 15px 0 10px;
+                }   
+                @media(max-width:$breakpoint-tablet-sm){
+                    margin: 10px 0 10px;
+                }           
+            }
+            .date{
+                color: #391400A3;
+                @media(max-width:$breakpoint-tablet-sm){
+                    font-size: 15px;
+                } 
+            }
+        }
+        .blogLink{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        &:hover{
+            .BlogImageBox{
+              img{
+                transform: scale(1.1);
+              }  
+            }
+        }
+    }
+    &.grid2{
+        grid-template-columns: repeat(2,1fr); 
+        @media(max-width:$breakpoint-mobile){
+            grid-template-columns: repeat(1,1fr);
+        }
+        .BlogCard{
+            .BlogImageBox{
+                max-height: 330px;
+                min-height: 330px;
+                @media(max-width:$breakpoint-laptop){
+                    max-height: 290px;
+                    min-height: 290px;
+                }
+                @media(max-width:$breakpoint-tablet){
+                    max-height: 270px;
+                    min-height: 270px;
+                }
+                @media(max-width:$breakpoint-tablet-sm){
+                    max-height: 210px;
+                    min-height: 210px;
+                }
+                @media(max-width:$breakpoint-mobile){
+                    max-height: 260px;
+                    min-height: 260px;
+                }
+                @media(max-width:$breakpoint-mobile-sm){
+                    max-height: 230px;
+                    min-height: 230px;
+                }
+                @media(max-width:$breakpoint-mobile-xs){
+                    max-height: 130px;
+                    min-height: 130px;
+                }
+            }
+        } 
+    }
+    &.grid3{
+        grid-template-columns: repeat(3,1fr);
+        @media(max-width:$breakpoint-mobile){
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media(max-width:$breakpoint-mobile-sm){
+            grid-template-columns: repeat(1,1fr);
+        } 
+        .BlogImageBox{
+            max-height: 210px;
+            min-height: 210px;
+            @media(max-width:$breakpoint-laptop){
+                max-height: 185px;
+                min-height: 185px;
+            }
+            @media(max-width:$breakpoint-tablet){
+                max-height: 175px;
+                min-height: 175px;
+            }
+            @media(max-width:$breakpoint-tablet-sm){
+                max-height: 135px;
+                min-height: 135px;
+            }
+            @media(max-width:$breakpoint-mobile){
+                max-height: 150px;
+                min-height: 150px;
+            }  
+            @media(max-width:$breakpoint-mobile-sm){
+                max-height: 200px;
+                min-height: 200px;
+            }
+            @media(max-width:$breakpoint-mobile-xs){
+                max-height: 130px;
+                min-height: 130px;
+            }
+        }
+        .blogContent{
+            
+            h3{
+                font-size: 24px;
+                font-weight: 700;
+                @media(max-width:$breakpoint-tablet){
+                    font-size: 20px;
+                }
+                @media(max-width:$breakpoint-tablet-sm){
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

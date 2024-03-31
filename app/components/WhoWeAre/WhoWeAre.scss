@@ -1,0 +1,89 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.whoWeAreSection{
+    .whoWeAreWrapper{
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        @media(max-width:$breakpoint-mobile){
+           flex-direction: column;
+           gap: 25px;
+        }
+        .contentDetails , .WorkDetails{
+            width: 50%;
+            @media(max-width:$breakpoint-mobile){
+                width: 100%;
+            }
+        }
+        .contentDetails{
+            .innerContent{  
+                max-width: 470px;
+                @media(max-width:$breakpoint-tablet) {
+                    max-width: 400px;
+                }
+                @media(max-width:$breakpoint-tablet-sm) {
+                    max-width: 310px;
+                }
+                @media(max-width:$breakpoint-mobile){
+                    max-width: 100%;
+                }
+                h3{
+                    margin-bottom: 30px;
+                    @media(max-width:$breakpoint-tablet) {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+        .WorkDetails{
+            padding-top: 40px;
+            @media(max-width:$breakpoint-mobile){
+                padding-top: 0px;
+            }
+            .wrap{
+                display: flex;
+                align-items: center;
+                gap: 60px;
+                margin-bottom: 20px;
+                @media(max-width:$breakpoint-laptop) {
+                    gap: 40px;
+                }
+                @media(max-width:$breakpoint-tablet) {
+                    gap: 30px;
+                }
+                @media(max-width:$breakpoint-mobile){
+                    gap: 20px;
+                    margin-bottom: 15px;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                .number{
+                    font-size: 72px;
+                    line-height: 1.2;
+                    font-weight: 800;
+                    color: $primary;
+                    min-width: 50px;
+                    @media(max-width:$breakpoint-laptop) {
+                        font-size: 60px;
+                    }
+                    @media(max-width:$breakpoint-tablet) {
+                        font-size: 52px;
+                    }
+                    @media(max-width:$breakpoint-tablet-sm) {
+                        min-width: 35px;
+                    }
+                    @media(max-width:$breakpoint-mobile){
+                        min-width: 32px;
+                        font-size: 44px;
+                    }
+                    @media(max-width:$breakpoint-mobile-xs){
+                        min-width: 28px;
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

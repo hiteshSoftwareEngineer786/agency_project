@@ -1,0 +1,119 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.faqSection{
+    .faqRow{
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        @media(max-width:$breakpoint-mobile){
+           flex-direction: column;
+           gap: 30px 20px;
+        }
+        .faqDetails , .faqsWrapper{
+            width: 50%;
+            @media(max-width:$breakpoint-mobile){
+                width: 100%;
+            }
+        }
+        .faqDetails{
+            .faqInnerContent{
+                max-width: 470px;
+                @media(max-width:$breakpoint-mobile){
+                    max-width: 100%;
+                }
+                p{
+                    margin: 30px 0;
+                    @media(max-width:$breakpoint-mobile){
+                        margin: 20px 0;
+                    }
+                }
+                .link{
+                    line-height: 1.2;
+                }
+            }
+        }
+        .faqsWrapper{
+            .accordionItem{
+                border: 1px solid $bordercolor;
+                border-bottom: none;
+                &:last-child{
+                    border-bottom: 1px solid $bordercolor;
+                }
+            }
+            .accordionItem{
+                transition: 0.3s ease-in-out;
+                overflow: hidden;
+                cursor: pointer;
+                .accordionTitleBox{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 40px;
+                    gap: 15px;
+                    @media(max-width:$breakpoint-tablet){
+                        padding: 25px;
+                    }
+                    @media(max-width:$breakpoint-mobile-xs){
+                        padding: 15px;
+                    }
+                    .faqIcon{
+                        width: 32px;
+                        height: 32px;
+                        background-color: $secondary;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        transition: all 0.4s ease-in-out;
+                        @media(max-width:$breakpoint-tablet-sm){
+                            width: 26px;
+                            height: 26px;
+                        }
+                        i{
+                            color: $white;
+                            font-size: 9px;
+                            transition: all 0.4s ease-in-out;
+                            @media(max-width:$breakpoint-tablet-sm){
+                                font-size: 7px;
+                            }
+                        }
+                    }
+                }
+                .accordionContent{
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: all 0.4s ease-in-out;
+                    p{
+                        padding: 0 40px 40px;
+                        @media(max-width:$breakpoint-tablet){
+                            padding: 0 25px 25px;
+                        }
+                        @media(max-width:$breakpoint-mobile-xs){
+                            padding:0 15px 15px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+                &.accordionOpen{
+                    background-color: $white;
+                    .accordionContent{
+                        height: auto;         
+                        max-height: 1000px;
+                        transition: all 0.4s ease-in-out;
+                    }
+                    .accordionTitleBox{
+                        .faqIcon{
+                            i{
+                                transform: rotate(180deg);
+                                transition: all 0.4s ease-in-out;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

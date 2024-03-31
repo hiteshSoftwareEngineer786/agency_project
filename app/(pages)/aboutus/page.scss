@@ -1,0 +1,163 @@
+@import '../../scss/partial';
+@import '../../scss/variables';
+
+.aboutSlideSection{
+    .SliderImageWrapper{
+        display: flex;
+        align-items: stretch;
+        gap: 30px;
+        @media(max-width:$breakpoint-tablet){
+            gap: 20px;
+        }
+        @media(max-width:$breakpoint-mobile){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .aboutImageBox , .videoBox{
+            width: 50%;
+            @media(max-width:$breakpoint-mobile){
+                width: 100%;
+            }
+        }
+        .videoBox{
+            position: relative;
+            img{
+                border-radius: 6px;
+            }
+            .playBtn{
+                width: 148px;
+                height: 148px;
+                border: 1px solid $white;
+                border-radius: 50%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                @media(max-width:$breakpoint-tablet){
+                    width: 110px;
+                    height: 110px;
+                }
+                @media(max-width:$breakpoint-tablet-sm){
+                    width: 100px;
+                    height: 100px;
+                }
+                @media(max-width:$breakpoint-mobile-xs){
+                    width: 70px;
+                    height: 70px;
+                }
+                i{
+                    color: $white;
+                    font-size: 22px;
+                    @media(max-width:$breakpoint-mobile-xs){
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        .aboutImageBox{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 30px;
+            @media(max-width:$breakpoint-tablet){
+                gap: 20px;
+            }
+            @media(max-width:$breakpoint-mobile-xs){
+                grid-template-columns: repeat(1,1fr);
+                gap: 15px;
+            }
+            .boxImage{
+                img{
+                    border-radius: 6px;
+                    @media(max-width:$breakpoint-tablet-sm){
+                       width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+.darkBg{
+    background-color: $darkBg;
+    h1,h2,h3,h4,h5,h6,span{
+        color: $white;
+    }
+    p{
+        color: rgba($color: $white, $alpha: 0.64);
+    }
+    .smallTitle{
+        color: $secondary;
+    }
+}
+.faqSection{
+    .AboutusFaq{
+        &.faqRow{
+            flex-direction: column;
+            gap: 60px;
+            @media(max-width:$breakpoint-tablet-sm){
+                gap: 45px;
+            }
+            @media(max-width:$breakpoint-mobile-sm){
+                gap: 30px;
+            }
+            .faqDetails , .faqsWrapper{
+                width: 100%;
+            }
+            .faqDetails{
+                .faqInnerContent{
+                    max-width: 100%;
+                    p{
+                        margin-bottom: 0;
+                    }
+                    .link{
+                        display: none;
+                    }
+                }
+            }
+            .faqsWrapper{
+                .accordionItem {
+                    border-color: #3A3C56;
+                    &:last-child{
+                        border-color: #3A3C56;
+                    }
+                    &.accordionOpen{
+                        background-color: $white;
+                        box-shadow: 0px 32px 64px 0px #3914000A;
+                        h4{
+                            color: $primary;
+                        }
+                        p{
+                            color: initial;
+                        }
+                    }
+                }
+            }
+        }
+        
+       
+    }
+}
+.AboutusCta{
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 140px;
+        left: 0;
+        bottom: 0;
+        background-color: #FDF0E9;
+        z-index: 0;
+        @media(max-width:$breakpoint-tablet-sm){
+            height: 105px;
+        }
+    }
+    .ctaBox{
+        position: relative;
+        z-index: 1;
+    }
+}
